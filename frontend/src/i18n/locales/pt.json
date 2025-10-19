@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "ImageSeek",
+    "subtitle": "Um Sistema Híbrido Multimodal de Recuperação de Imagens para Coleções Específicas de um Domínio"
+  },
+  "header": {
+    "back": "Voltar",
+    "backToWelcome": "Voltar ao início",
+    "switchToDark": "Mudar para modo escuro",
+    "switchToLight": "Mudar para modo claro",
+    "switchToSystem": "Mudar para modo sistema"
+  },
+  "search": {
+    "placeholder": "Pesquisar imagens...",
+    "placeholderHybrid": "Digite a consulta de pesquisa híbrida...",
+    "searchMode": "Modo de pesquisa:",
+    "normal": "Normal",
+    "hybrid": "Híbrido",
+    "results": "Resultados:",
+    "hybridFunction": "Função híbrida:",
+    "search": "Pesquisar",
+    "searching": "A pesquisar...",
+    "googleImages": "Google Images",
+    "arquivoPt": "Arquivo.pt"
+  },
+  "hybridFunctions": {
+    "linearZero": "Linear Decay (Zero-indexed)",
+    "linearOne": "Linear Decay (One-indexed)",
+    "squareRoot": "Square Root Decay",
+    "exponential": "Exponential Decay"
+  },
+  "results": {
+    "noResults": "Nenhum resultado encontrado. Tente um termo de pesquisa diferente.",
+    "score": "Pontuação:",
+    "id": "ID:",
+    "loading": {
+      "preparingModel": "A Preparar o Modelo",
+      "searchWillContinue": "A sua pesquisa continuará automaticamente quando estiver pronto"
+    }
+  },
+  "welcome": {
+    "title": "Sugestões",
+    "categories": {
+      "sports": "Desportos e atividades",
+      "president": "Presidente em atividades",
+      "objects": "Objetos",
+      "others": "Outros"
+    },
+    "queries": {
+      "cycling": "Ciclismo",
+      "football": "Futebol",
+      "swimming": "Natação",
+      "presidentSwimming": "Presidente a nadar",
+      "presidentReading": "Presidente a ler",
+      "presidentSpeech": "Presidente num discurso",
+      "painting": "Pintura",
+      "book": "Livro",
+      "flag": "Bandeira",
+      "doctors": "Médicos",
+      "peopleWorking": "Pessoas a trabalhar",
+      "vaccinations": "Vacinações"
+    }
+  },
+  "imageViewer": {
+    "closeEsc": "Fechar (Pressione Esc)",
+    "untitledDocument": "Documento sem título",
+    "viewDocument": "Ver Documento"
+  },
+  "notifications": {
+    "close": "Fechar",
+    "searchError": "Erro de Pesquisa",
+    "searchWarning": "Aviso de Pesquisa",
+    "googleSearchError": "Erro de Pesquisa Google"
+  },
+  "model": {
+    "infoNotAvailable": "Informações do modelo não disponíveis",
+    "unknownModel": "Modelo Desconhecido",
+    "unknownType": "Tipo Desconhecido",
+    "noDescription": "Nenhuma descrição disponível",
+    "model": "Modelo",
+    "type": "Tipo",
+    "description": "Descrição",
+    "status": {
+      "unknown": "Desconhecido",
+      "ready": "Pronto",
+      "loading": "A carregar",
+      "unloaded": "Descarregado",
+      "error": "Erro",
+      "tooltips": {
+        "unknown": "Estado do modelo desconhecido",
+        "ready": "Modelo está pronto",
+        "loading": "Modelo está a carregar...",
+        "unloaded": "Modelo não está carregado",
+        "error": "O modelo encontrou um erro"
+      }
+    }
+  },
+  "footer": {
+    "madeWithAI": "Alimentado por IA",
+    "github": "GitHub",
+    "apiDocs": "Docs da API",
+    "version": "v",
+    "poweredBy": "Alimentado por IA",
+    "about": "Sobre",
+    "copyright": "ImageSeek"
+  },
+  "about": {
+    "title": "Sobre o Sistema",
+    "close": "Fechar",
+    "intro": {
+      "title": "ImageSeek",
+      "description": "é um sistema de recuperação de imagens multimodal que combina métodos de recuperação baseados em texto e em imagem através de um mecanismo de ajuste de pontuação híbrida.",
+      "dataset": "A nossa aplicação de demonstração permite-lhe explorar um conjunto de dados de",
+      "datasetCount": "42.333 imagens",
+      "datasetSource": "do website da Presidência Portuguesa através de consultas em linguagem natural em qualquer idioma suportado pelos modelos subjacentes.",
+      "innovation": "Ao contrário dos métodos tradicionais de fusão de classificação que normalizam ambas as modalidades igualmente, o nosso sistema usa um",
+      "innovationHighlight": "mecanismo de ajuste de pontuação assimétrico",
+      "innovationDescription": "que trata a recuperação baseada em imagem como uma linha de base confiável enquanto harmoniza as pontuações baseadas em texto através de ajustes dependentes da posição."
+    },
+    "featuresTitle": "Funcionalidades",
+    "features": {
+      "multilingual": {
+        "title": "Suporte Multilíngue",
+        "description": "Consulte em qualquer idioma suportado pelos modelos subjacentes sem depender de estratégias de tradução automática"
+      },
+      "hybrid": {
+        "title": "Recuperação Híbrida",
+        "description": "Combina correspondência visual-semântica com relevância contextual através de metadados textuais"
+      },
+      "clip": {
+        "title": "Modelos Baseados no CLIP",
+        "description": "Alimentado por modelos de visão-linguagem para compreensão cross-modal avançada"
+      },
+      "comparison": {
+        "title": "Análise Comparativa",
+        "description": "Comparação direta entre abordagens de recuperação híbridas e convencionais baseadas em CLIP"
+      }
+    },
+    "datasetInfo": {
+      "label": "Conjunto de dados:",
+      "description": "42.333 imagens do website da Presidência Portuguesa, fornecendo um conjunto de testes abrangente para recuperação multimodal em domínios especializados."
+    },
+    "footer": {
+      "institutions": "UBI • INESC TEC • ULisboa • NLX-Group • IT",
+      "github": "Código-fonte completo disponível no GitHub"
+    }
+  }
+}

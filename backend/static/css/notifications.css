@@ -1,0 +1,150 @@
+/* Notification Container */
+.notification-container {
+  max-width: 400px;
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  
+  pointer-events: none;
+}
+
+/* Notification Base */
+.notification {
+  padding: 16px;
+  margin-bottom: 12px;
+  
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  
+  background-color: var(--clr-surface-a20);
+  border: 1px solid var(--clr-surface-a30);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  pointer-events: auto;
+  
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Notification Types */
+.notification.error {
+  border-left: 4px solid #dc3545;
+  background-color: rgba(220, 53, 69, 0.7);
+}
+
+.notification.warning {
+  border-left: 4px solid #ffc107;
+  background-color: rgba(255, 193, 7, 0.7);
+}
+
+.notification.success {
+  border-left: 4px solid #28a745;
+  background-color: rgba(40, 167, 69, 0.7);
+}
+
+.notification.info {
+  border-left: 4px solid #17a2b8;
+  background-color: rgba(23, 162, 184, 0.7);
+}
+
+/* Notification Content */
+.notification-icon {
+  min-width: 18px;
+  font-size: 18px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification.error .notification-icon {
+  color: #dc3545;
+}
+
+.notification.warning .notification-icon {
+  color: #ffc107;
+}
+
+.notification.success .notification-icon {
+  color: #28a745;
+}
+
+.notification.info .notification-icon {
+  color: #17a2b8;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.notification-message {
+  opacity: 0.9;
+}
+
+.notification-close {
+  width: 20px;
+  height: 20px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: none;
+  border: none;
+  color: var(--text-color);
+  
+  cursor: pointer;
+  font-size: 16px;
+  
+  transition: opacity 0.2s ease;
+}
+
+.notification-close:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .notification-container {
+    max-width: calc(100vw - 40px);
+    
+    left: 20px;
+    right: 20px;
+  }
+}
+
+.notification.info .notification-title {
+  font-weight: 600;
+}
+
+.notification.info .notification-message {
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+@keyframes notification-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.notification.info:not(.show) {
+  animation: notification-pulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,133 @@
+{
+    "models": {
+        "CLIP Large": {
+            "model_type": "clip",
+            "model_name": "ViT-L/14",
+            "embedding_name": "CLIPViTL14",
+            "hidden": true,
+            "description": "CLIP Large model with Vision Transformer Large"
+        },
+        "CLIP Base": {
+            "model_type": "clip",
+            "model_name": "ViT-B/32",
+            "embedding_name": "CLIPViTB32",
+            "hidden": true,
+            "description": "CLIP Base model with Vision Transformer Base"
+        },
+        "MultilingualCLIP LABSE-14": {
+            "model_type": "multilingual_clip",
+            "model_name": "M-CLIP/LABSE-Vit-L-14",
+            "embedding_name": "CLIPViTL14",
+            "hidden": false,
+            "description": "Multilingual CLIP with LABSE and ViT Large"
+        },
+        "MultilingualCLIP XLM-32": {
+            "model_type": "multilingual_clip",
+            "model_name": "M-CLIP/XLM-Roberta-Large-Vit-B-32",
+            "embedding_name": "CLIPViTB32",
+            "hidden": false,
+            "description": "Multilingual CLIP with XLM-Roberta Large and ViT Base"
+        },
+        "MultilingualCLIP XLM-14": {
+            "model_type": "multilingual_clip",
+            "model_name": "M-CLIP/XLM-Roberta-Large-Vit-L-14",
+            "embedding_name": "CLIPViTL14",
+            "hidden": false,
+            "description": "Multilingual CLIP with XLM-Roberta Large and ViT Large"
+        },
+        "OpenCLIP Laion5b": {
+            "model_type": "open_clip",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "laion5b_s13b_b90k",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32",
+            "hidden": false,
+            "description": "OpenCLIP with XLM-Roberta Base trained on Laion5B"
+        },
+        "BLIP-2 ViT-G": {
+            "model_type": "blip2",
+            "model_name": "Salesforce/blip2-itm-vit-g",
+            "embedding_name": "Blip2ItmVitG",
+            "embedding_length": 768,
+            "hidden": false,
+            "description": "BLIP-2 Image-Text Matching with ViT Giant"
+        },
+        "SigLIP Base": {
+            "model_type": "siglip",
+            "model_name": "google/siglip-base-patch16-224",
+            "embedding_name": "SigLIPBasePatch16",
+            "hidden": false,
+            "description": "SigLIP Base model with 16x16 patches"
+        },
+        "BERTimbau Base": {
+            "model_type": "bertimbau",
+            "model_name": "neuralmind/bert-base-portuguese-cased",
+            "embedding_name": "BertBasePortugueseCased",
+            "hidden": false,
+            "description": "Portuguese BERT Base model (cased)"
+        },
+        "BERTimbau Large": {
+            "model_type": "bertimbau",
+            "model_name": "neuralmind/bert-large-portuguese-cased",
+            "embedding_name": "BertLargePortugueseCased",
+            "hidden": false,
+            "description": "Portuguese BERT Large model (cased)"
+        },
+        "Albertina PT-PT": {
+            "model_type": "albertina",
+            "model_name": "PORTULAN/albertina-1b5-portuguese-ptpt-encoder",
+            "embedding_name": "Albertina900mPortuguesePTPTEncoder",
+            "hidden": false,
+            "description": "Albertina Portuguese encoder for Portugal variant"
+        },
+        "OpenCLIP Laion5b FT-20": {
+            "model_type": "open_clip_fine_tuned",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "/mnt/Seagate IronWolf 12TB/2025_05_05-17_37_28-model_xlm-roberta-base-ViT-B-32-lr_1e-05-b_64-j_4-p_amp/checkpoints/epoch_20.pt",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32FT20",
+            "hidden": false,
+            "description": "OpenCLIP fine-tuned for 20 epochs"
+        },
+        "OpenCLIP Laion5b FT-40": {
+            "model_type": "open_clip_fine_tuned",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "/mnt/Seagate IronWolf 12TB/2025_05_05-17_37_28-model_xlm-roberta-base-ViT-B-32-lr_1e-05-b_64-j_4-p_amp/checkpoints/epoch_40.pt",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32FT40",
+            "hidden": false,
+            "description": "OpenCLIP fine-tuned for 40 epochs"
+        },
+        "OpenCLIP Laion5b FT-60": {
+            "model_type": "open_clip_fine_tuned",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "/mnt/Seagate IronWolf 12TB/2025_05_05-17_37_28-model_xlm-roberta-base-ViT-B-32-lr_1e-05-b_64-j_4-p_amp/checkpoints/epoch_60.pt",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32FT60",
+            "hidden": false,
+            "description": "OpenCLIP fine-tuned for 60 epochs"
+        },
+        "OpenCLIP Laion5b FT-80": {
+            "model_type": "open_clip_fine_tuned",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "/mnt/Seagate IronWolf 12TB/2025_05_05-17_37_28-model_xlm-roberta-base-ViT-B-32-lr_1e-05-b_64-j_4-p_amp/checkpoints/epoch_80.pt",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32FT80",
+            "hidden": false,
+            "description": "OpenCLIP fine-tuned for 80 epochs"
+        },
+        "OpenCLIP Laion5b FT-100": {
+            "model_type": "open_clip_fine_tuned",
+            "model_name": "xlm-roberta-base-ViT-B-32",
+            "model_pretrained": "/mnt/Seagate IronWolf 12TB/2025_05_05-17_37_28-model_xlm-roberta-base-ViT-B-32-lr_1e-05-b_64-j_4-p_amp/checkpoints/epoch_100.pt",
+            "embedding_name": "OPENCLIPXLMRobertaBaseViTB32FT100",
+            "hidden": false,
+            "description": "OpenCLIP fine-tuned for 100 epochs"
+        }
+    },
+    "model_type_mapping": {
+        "clip": 0,
+        "multilingual_clip": 1,
+        "open_clip": 2,
+        "open_clip_fine_tuned": 3,
+        "blip2": 4,
+        "siglip": 5,
+        "bertimbau": 6,
+        "albertina": 7
+    }
+}

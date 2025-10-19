@@ -1,0 +1,38 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+server.log
+
+# Development files
+.git/
+.gitignore
+README.md
+
+# Local config (use config.docker.json instead)
+config.json
+
+# Testing data
+testing_server/
+
+# Temporary files
+*.tmp
+*.temp

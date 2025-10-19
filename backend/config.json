@@ -1,0 +1,38 @@
+{
+    "app_name": "Server",
+    "version": "1.0",
+    "production": false,
+
+    "redis_host": "localhost",
+    "redis_port": 6379,
+    "redis_db": 0,
+
+    "_comment1": "Watched folders need to have absolute paths. Both images and documents will be processed from these folders.",
+    "watched_folders": [
+        "/app/watched"
+    ],
+
+    "_comment2a": "The model alias can be found in the models.json file.",
+    "_comment2b": "Available models are now configured externally in models.json",
+    "model_alias": "OpenCLIP Laion5b",
+    "models_config_path": "models.json",
+
+    "_comment3a": "Embedding generation schedule configuration.",
+    "_comment3b": "schedule_type: 'manual' (trigger via API/UI), 'interval' (automatic scheduling), or 'immediate' (generate on file add)",
+    "_comment3c": "start_hour: Hour of day to start (0-23, used with interval scheduling)",
+    "_comment3d": "interval_hours: How often to generate embeddings in hours (used with interval scheduling)",
+    "embedding_schedule": {
+        "schedule_type": "immediate",
+        "start_hour": 1,
+        "interval_hours": 24
+    },
+    "_comment4a": "Dynamic model loading configuration.",
+    "_comment4b": "When enabled, models are only loaded when needed for queries and automatically unloaded after inactivity.",
+    "_comment4c": "This saves memory but adds latency to the first query after model unload.",
+    "_comment4d": "dynamic_loading: Enable/disable dynamic model loading (true/false)",
+    "_comment4e": "unload_timeout_minutes: Minutes of inactivity before unloading the model (default: 10)",
+    "dynamic_model_loading": {
+        "enabled": true,
+        "unload_timeout_minutes": 1
+    }
+}

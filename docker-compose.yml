@@ -1,0 +1,54 @@
+services:
+  redis:
+    image: redis/redis-stack:latest
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+      - 8001:8001
+    volumes:
+      - ./redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "-p", "6379", "ping"]
+      interval: 2s
+      timeout: 1m30s
+      retries: 5
+      start_period: 5s
+    networks:
+      - image-retrieval-network
+
+  image-retrieval-system:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: image-retrieval-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./testing_server:/app/watched:ro 
+      - ./backend/config.docker.json:/app/config.json:ro  
+      - ./backend/models.json:/app/models.json:ro
+    networks:
+      - image-retrieval-network
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - FLASK_ENV=production
+
+  nginx:
+    image: nginx:latest
+    container_name: image-retrieval-nginx
+    restart: unless-stopped
+    ports:
+      - "8060:80"
+      - "8443:443"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    networks:
+      - image-retrieval-network
+
+networks:
+  image-retrieval-network:
+    driver: bridge

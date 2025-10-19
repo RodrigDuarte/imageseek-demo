@@ -1,0 +1,59 @@
+/* Light Theme (Default) */
+:root {
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  --clr-primary-a0: #0c2340;
+  --clr-primary-a10: #1b2c47;
+  --clr-primary-a20: #28364e;
+  --clr-primary-a30: #354055;
+  --clr-primary-a40: #414a5c;
+  --clr-primary-a50: #4e5463;
+
+  --clr-surface-a0: #ffffff;
+  --clr-surface-a10: #f0f0f0;
+  --clr-surface-a20: #e1e1e1;
+  --clr-surface-a30: #d3d3d3;
+  --clr-surface-a40: #c5c5c5;
+  --clr-surface-a50: #b6b6b6;
+
+  --clr-surface-tonal-a0: #e5e6ea;
+  --clr-surface-tonal-a10: #d9dade;
+  --clr-surface-tonal-a20: #ceced1;
+  --clr-surface-tonal-a30: #c2c3c5;
+  --clr-surface-tonal-a40: #b7b7b9;
+  --clr-surface-tonal-a50: #acacae;
+
+  --text-color: var(--clr-dark-a0);
+  --text-color-button: var(--clr-light-a0);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  --clr-primary-a0: #0c2340;
+  --clr-primary-a10: #273753;
+  --clr-primary-a20: #404d67;
+  --clr-primary-a30: #59647b;
+  --clr-primary-a40: #737c90;
+  --clr-primary-a50: #8e95a5;
+
+  --clr-surface-a0: #121212;
+  --clr-surface-a10: #282828;
+  --clr-surface-a20: #3f3f3f;
+  --clr-surface-a30: #575757;
+  --clr-surface-a40: #717171;
+  --clr-surface-a50: #8b8b8b;
+
+  --clr-surface-tonal-a0: #131417;
+  --clr-surface-tonal-a10: #28292c;
+  --clr-surface-tonal-a20: #3f4043;
+  --clr-surface-tonal-a30: #58585b;
+  --clr-surface-tonal-a40: #717274;
+  --clr-surface-tonal-a50: #8c8c8e;
+
+  --text-color: var(--clr-light-a0);
+  --text-color-button: var(--clr-light-a0);
+}

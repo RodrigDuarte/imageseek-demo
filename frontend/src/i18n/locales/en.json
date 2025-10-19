@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "ImageSeek",
+    "subtitle": "An Hybrid Multimodal Image Retrieval System for Domain-Specific Collections"
+  },
+  "header": {
+    "back": "Back",
+    "backToWelcome": "Back to welcome",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToSystem": "Switch to system mode"
+  },
+  "search": {
+    "placeholder": "Search for images...",
+    "placeholderHybrid": "Enter hybrid search query...",
+    "searchMode": "Search mode:",
+    "normal": "Normal",
+    "hybrid": "Hybrid",
+    "results": "Results:",
+    "hybridFunction": "Hybrid function:",
+    "search": "Search",
+    "searching": "Searching...",
+    "googleImages": "Google Images",
+    "arquivoPt": "Arquivo.pt"
+  },
+  "hybridFunctions": {
+    "linearZero": "Linear Decay (Zero-indexed)",
+    "linearOne": "Linear Decay (One-indexed)",
+    "squareRoot": "Square Root Decay",
+    "exponential": "Exponential Decay"
+  },
+  "results": {
+    "noResults": "No results found. Please try a different search term.",
+    "score": "Score:",
+    "id": "ID:",
+    "loading": {
+      "preparingModel": "Preparing the Model",
+      "searchWillContinue": "Your search will continue automatically once ready"
+    }
+  },
+  "welcome": {
+    "title": "Suggestions",
+    "categories": {
+      "sports": "Sports and Activities",
+      "president": "President in Activities", 
+      "objects": "Objects",
+      "others": "Others"
+    },
+    "queries": {
+      "cycling": "Cycling",
+      "football": "Football",
+      "swimming": "Swimming",
+      "presidentSwimming": "President swimming",
+      "presidentReading": "President reading",
+      "presidentSpeech": "President in a speech",
+      "painting": "Painting",
+      "book": "Book",
+      "flag": "Flag",
+      "doctors": "Doctors",
+      "peopleWorking": "People working",
+      "vaccinations": "Vaccinations"
+    }
+  },
+  "imageViewer": {
+    "closeEsc": "Close (Press Esc)",
+    "untitledDocument": "Untitled Document",
+    "viewDocument": "View Document"
+  },
+  "notifications": {
+    "close": "Close",
+    "searchError": "Search Error",
+    "searchWarning": "Search Warning",
+    "googleSearchError": "Google Search Error"
+  },
+  "model": {
+    "infoNotAvailable": "Model information not available",
+    "unknownModel": "Unknown Model",
+    "unknownType": "Unknown Type",
+    "noDescription": "No description available",
+    "model": "Model",
+    "type": "Type",
+    "description": "Description",
+    "status": {
+      "unknown": "Unknown",
+      "ready": "Ready",
+      "loading": "Loading",
+      "unloaded": "Unloaded",
+      "error": "Error",
+      "tooltips": {
+        "unknown": "Model status unknown",
+        "ready": "Model is ready",
+        "loading": "Model is loading...",
+        "unloaded": "Model is not loaded",
+        "error": "Model encountered an error"
+      }
+    }
+  },
+  "footer": {
+    "madeWithAI": "Powered by AI",
+    "github": "GitHub",
+    "apiDocs": "API Docs",
+    "version": "v",
+    "poweredBy": "Powered by AI",
+    "about": "About",
+    "copyright": "ImageSeek"
+  },
+  "about": {
+    "title": "About this System",
+    "close": "Close",
+    "intro": {
+      "title": "ImageSeek",
+      "description": "is a web-based multimodal image retrieval system that combines text-based and image-based retrieval methods through a hybrid score adjustment mechanism.",
+      "dataset": "Our demonstration application allows you to explore a dataset of",
+      "datasetCount": "42,333 images",
+      "datasetSource": "from the Portuguese Presidency website through natural language queries in any language supported by the underlying models.",
+      "innovation": "Unlike traditional rank fusion methods that normalize both modalities equally, our system uses an",
+      "innovationHighlight": "asymmetric score adjustment mechanism",
+      "innovationDescription": "that treats image-based retrieval as a reliable baseline while harmonizing text-based scores through position-dependent adjustments."
+    },
+    "featuresTitle": "Features",
+    "features": {
+      "multilingual": {
+        "title": "Multilingual Support",
+        "description": "Query in any language supported by the underlying models without relying on machine translation strategies"
+      },
+      "hybrid": {
+        "title": "Hybrid Retrieval",
+        "description": "Combines visual-semantic correspondence with contextual relevance through textual metadata"
+      },
+      "clip": {
+        "title": "CLIP-Based Models",
+        "description": "Powered by vision-language models for advanced cross-modal understanding"
+      },
+      "comparison": {
+        "title": "Comparative Analysis",
+        "description": "Direct comparison between hybrid and conventional CLIP-based retrieval approaches"
+      }
+    },
+    "datasetInfo": {
+      "label": "Dataset:",
+      "description": "42,333 images from the Portuguese Presidency website, providing a comprehensive testbed for multimodal retrieval in specialized domains."
+    },
+    "footer": {
+      "institutions": "UBI • INESC TEC • ULisboa • NLX-Group • IT",
+      "github": "Complete source code available on GitHub"
+    }
+  }
+}

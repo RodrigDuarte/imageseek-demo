@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/debug.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notifications.css') }}">
+</head>
+<body>
+    
+    <main class="main-container">
+        <div class="debug-controls" id="debug_panel">
+            <div class="debug-panel">
+                <div class="debug-header">
+                    <h2 class="debug-title">Debug Panel</h2>
+                    <button class="debug-close" id="debug_close" title="Close (Press M)">×</button>
+                </div>
+                
+                <div class="debug-content">
+                    <!-- Statistics Section -->
+                    <div class="debug-section">
+                        <h3 class="debug-section-title">Server Statistics</h3>
+                        <div class="debug-stats-grid">
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Total Images:</span>
+                                <span class="debug-stat-value" id="debug_total_images">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Visible Images:</span>
+                                <span class="debug-stat-value" id="debug_visible_images">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Hidden Images:</span>
+                                <span class="debug-stat-value" id="debug_hidden_images">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Total Documents:</span>
+                                <span class="debug-stat-value" id="debug_total_documents">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Visible Documents:</span>
+                                <span class="debug-stat-value" id="debug_visible_documents">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Hidden Documents:</span>
+                                <span class="debug-stat-value" id="debug_hidden_documents">Loading...</span>
+                            </div>
+                            <div class="debug-stat-item">
+                                <span class="debug-stat-label">Watched Folders:</span>
+                                <span class="debug-stat-value" id="debug_watched_folders">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Information Section -->
+                    <div class="debug-section">
+                        <h3 class="debug-section-title">System Information</h3>
+                        <div class="debug-info-grid">
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">User Agent:</span>
+                                <span class="debug-info-value" id="debug_user_agent">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Screen Resolution:</span>
+                                <span class="debug-info-value" id="debug_screen_resolution">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Viewport Size:</span>
+                                <span class="debug-info-value" id="debug_viewport_size">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Current Theme:</span>
+                                <span class="debug-info-value" id="debug_current_theme">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Local Storage Theme:</span>
+                                <span class="debug-info-value" id="debug_stored_theme">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Connection:</span>
+                                <span class="debug-info-value" id="debug_connection">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Page Load Time:</span>
+                                <span class="debug-info-value" id="debug_load_time">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedding Generation Section -->
+                    <div class="debug-section">
+                        <h3 class="debug-section-title">Embedding Generation</h3>
+                        <div class="debug-embedding-grid">
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Schedule Type:</span>
+                                <span class="debug-info-value" id="debug_schedule_type">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Start Hour:</span>
+                                <span class="debug-info-value" id="debug_start_hour">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Interval Hours:</span>
+                                <span class="debug-info-value" id="debug_interval_hours">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Current Model:</span>
+                                <span class="debug-info-value" id="debug_current_model">Loading...</span>
+                            </div>
+                            <div class="debug-info-item">
+                                <span class="debug-info-label">Scheduler Running:</span>
+                                <span class="debug-info-value" id="debug_scheduler_running">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="debug-embedding-controls">
+                            <button class="debug-action-button" id="generate_embeddings_btn">Generate Embeddings</button>
+                            <div class="embedding-progress-container" id="embedding_progress_container">
+                                <div class="embedding-progress-info">
+                                    <span class="embedding-progress-text" id="embedding_progress_text">Ready</span>
+                                    <span class="embedding-progress-percentage" id="embedding_progress_percentage">0%</span>
+                                </div>
+                                <div class="embedding-progress-bar">
+                                    <div class="embedding-progress-fill" id="embedding_progress_fill"></div>
+                                </div>
+                                <div class="embedding-progress-details" id="embedding_progress_details">Ready to generate embeddings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help Section -->
+                    <div class="debug-help">
+                        <p class="debug-help-text">
+                            <strong>Debug Panel Controls:</strong><br>
+                            • Press <kbd>M</kbd> to toggle this panel<br>
+                            • Statistics are refreshed every 30 seconds<br>
+                            • System information updates dynamically<br>
+                            • <strong>Generate Embeddings:</strong> Create vector embeddings for search
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="header-container">
+            <span></span>
+            <h1 class="search-title">Image Search</h1>
+            <!-- Theme toggle container -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="theme_toggle">
+                    <!-- Options : 🌙 (dark), ☀️ (light) -->
+                    <span id="theme_icon">🌙</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="content-area">
+            <!-- Search Container -->
+            <div class="search-container">
+                <div class="search-form" id="search_form">
+                    <input type="text" class="search-input" id="search_input" placeholder="Search for images..." autocomplete="off">
+                </div>
+                
+                <!-- Search Buttons Container -->
+                <div class="search-buttons-container" id="search_buttons_container">
+                    <button type="button" class="search-button" id="search_button">Search</button>
+                </div>
+            
+            <!-- Search Controls Row -->
+            <div class="search-controls-row">
+                <!-- Search toggle will be inserted here by JavaScript -->
+                <div id="search_toggle_container"></div>
+                
+                <!-- Max Results Selector -->
+                <div class="control-group">
+                    <label for="max_results_select" class="control-label">Max Results:</label>
+                    <select id="max_results_select" class="control-select">
+                        <option value="3">3</option>
+                        <option value="6" selected>6</option>
+                        <option value="9">9</option>
+                        <option value="27">27</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Container -->
+        <div class="results-container" id="results_container">
+
+            <!-- Example Queries Section -->
+            <div class="welcome-section" id="welcome_section">
+                <div class="welcome-content">
+                    <div class="example-queries">
+                        <div class="query-categories">
+                            <div class="query-category">
+                                <h4>Desportos e atividades</h4>
+                                <div class="query-suggestions">
+                                    <button class="query-suggestion" data-query="Ciclismo">Ciclismo</button>
+                                    <button class="query-suggestion" data-query="Futebol">Futebol</button>
+                                    <button class="query-suggestion" data-query="Natação">Natação</button>
+                                </div>
+                            </div>
+                            
+                            <div class="query-category">
+                                <h4>Presidente em atividades</h4>
+                                <div class="query-suggestions">
+                                    <button class="query-suggestion" data-query="Presidente a nadar">Presidente a nadar</button>
+                                    <button class="query-suggestion" data-query="Presidente a ler">Presidente a ler</button>
+                                    <button class="query-suggestion" data-query="Presidente num discurso">Presidente num discurso</button>
+                                </div>
+                            </div>
+                            
+                            <div class="query-category">
+                                <h4>Objetos</h4>
+                                <div class="query-suggestions">
+                                    <button class="query-suggestion" data-query="Pintura">Pintura</button>
+                                    <button class="query-suggestion" data-query="Livro">Livro</button>
+                                    <button class="query-suggestion" data-query="Bandeira">Bandeira</button>
+                                </div>
+                            </div>
+                            
+                            <div class="query-category">
+                                <h4>Outros</h4>
+                                <div class="query-suggestions">
+                                    <button class="query-suggestion" data-query="Médicos">Médicos</button>
+                                    <button class="query-suggestion" data-query="Pessoas a trabalhar">Pessoas a trabalhar</button>
+                                    <button class="query-suggestion" data-query="Vacinações">Vacinações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p class="loading-text">Searching...</p>
+            </div>
+
+            <!-- No Results Found -->
+            <div class="no-results" id="no_results">
+                <p>No results found. Please try a different search term.</p>
+            </div>
+            
+            <!-- Results List -->
+            <div class="results-list" id="results_list">
+                <!-- <div class="result-item">
+                    <div class="result-image">
+                        <img src="{{ url_for('static', filename='cat.png') }}" alt="Placeholder Image" class="placeholder-image">
+                    </div>
+                    <div class="result-info">
+                        <div class="result-title">Cat</div>
+                        <div class="result-source">Google</div>
+                        <div class="result-resolution">1920x1080</div>
+                    </div>
+                </div> -->
+
+        </div>       
+        </div> <!-- End of content-area -->
+     
+        <!-- Image Viewer Modal -->
+        <div class="image-viewer" id="image_viewer">
+            <div class="image-viewer-overlay" id="image_viewer_overlay"></div>
+            <div class="image-viewer-content">
+                <div class="image-viewer-header">
+                    <h3 class="image-viewer-title" id="image_viewer_title">Image Viewer</h3>
+                    <button class="image-viewer-close" id="image_viewer_close" title="Close (Press Esc)">×</button>
+                </div>
+                <div class="image-viewer-body">
+                    <img class="image-viewer-image" id="image_viewer_image" src="" alt="Full size image">
+                    <div class="image-viewer-document-details" id="image_viewer_document_details" style="display: none;">
+                        <div class="document-title" id="document_title"></div>
+                        <div class="document-content" id="document_content"></div>
+                        <div class="document-actions" id="document_actions">
+                            <button class="document-url-btn" id="document_url_btn" title="Open document in new tab" style="display: none;">📄 View Document</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </main>
+
+    <script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/themes.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/debug.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/image-viewer.js') }}"></script>
+
+</body>
+</html>
