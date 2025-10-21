@@ -6,6 +6,14 @@ The codebase for ImageSeek is open-source and available in this repository. We a
 
 Unlike traditional rank fusion methods that normalize both modalities equally, our system uses an asymmetric score adjustment mechanism that treats image-based retrieval as a reliable baseline while harmonizing text-based scores through position-dependent adjustments.
 
+## Demo Video
+
+See ImageSeek in action:
+
+https://github.com/RodrigDuarte/imageseek-demo/blob/fcab364fcb0d0d697910fcda430a076a77adc327/ImageSeek.mp4
+
+*The video demonstrates ImageSeek's multimodal search capabilities, showing how users can search through image collections using natural language queries and explore results through the intuitive web interface.*
+
 ## Installation
 
 ### Prerequisites
