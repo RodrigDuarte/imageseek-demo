@@ -10,7 +10,7 @@ Unlike traditional rank fusion methods that normalize both modalities equally, o
 
 See ImageSeek in action:
 
-https://github.com/RodrigDuarte/imageseek-demo/blob/fcab364fcb0d0d697910fcda430a076a77adc327/ImageSeek.mp4
+![ImageSeek](https://github.com/RodrigDuarte/imageseek-demo/blob/fcab364fcb0d0d697910fcda430a076a77adc327/ImageSeek.mp4)
 
 *The video demonstrates ImageSeek's multimodal search capabilities, showing how users can search through image collections using natural language queries and explore results through the intuitive web interface.*
 
